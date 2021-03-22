@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+}
+.link {
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

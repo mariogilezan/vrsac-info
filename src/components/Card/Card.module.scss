@@ -1,0 +1,35 @@
+.cardLink {
+  color: #2e353f;
+  background-color: #fff;
+  text-decoration: none;
+  margin: 0;
+  box-shadow: 0 0 0.4rem rgba(112, 160, 161, 0.4);
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-0.3rem);
+    background-color: #70a0a1;
+    color: #fff;
+  }
+}
+.article {
+  color: inherit;
+  padding: 1rem;
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    color: inherit;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+  }
+}
+.details {
+  display: flex;
+  align-items: baseline;
+}
+.category {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 0.8rem;
+}
