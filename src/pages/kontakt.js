@@ -1,9 +1,22 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout/Layout"
+import SEO from "../components/seo"
 
 export default function Kontakt({ location }) {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  const siteTitle = data.site.siteMetadata.title || "Kontakt"
   return (
-    <Layout location={location}>
+    <Layout location={location} title={siteTitle}>
+      <SEO title="Kontakt" />
       <h1>Kontakt Stranica</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,

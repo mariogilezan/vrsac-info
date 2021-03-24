@@ -5,7 +5,6 @@ import * as styles from "./Card.module.scss"
 
 export default function Card({ posts, basePath, isFirst, pageNumber }) {
   const firstPost = isFirst && pageNumber === 1
-  console.log(firstPost)
   return posts.map((post, i) => (
     <Link
       to={`${basePath}/${post.slug.current}`}
