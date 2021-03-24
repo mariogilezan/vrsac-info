@@ -8,7 +8,7 @@ import Pagination from "../components/Pagination/Pagination"
 const Posts = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allSanityPost.nodes
-  const { basePath } = pageContext
+  const { basePath, humanPageNumber } = pageContext
 
   if (posts.length <= 0) {
     return (
@@ -22,7 +22,13 @@ const Posts = ({ data, location, pageContext }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Naslovna" />
-      <CardList posts={posts} location={location} basePath={basePath} />
+      <CardList
+        posts={posts}
+        location={location}
+        basePath={basePath}
+        isFirst={true}
+        pageNumber={humanPageNumber}
+      />
       <Pagination context={pageContext} />
     </Layout>
   )

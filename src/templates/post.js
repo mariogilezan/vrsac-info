@@ -12,11 +12,7 @@ const Post = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={post.title} description={post.title} />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <article className="post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.title}</h1>
           <div className="postDetails">

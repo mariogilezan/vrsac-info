@@ -6,14 +6,14 @@ export default function SocialIcons() {
   return (
     <div className={styles.wrapper}>
       <SocialIcon
-        url="http://facebook.com"
+        url="https://www.facebook.com/infovrsac/"
         className={styles.link}
         style={{ width: 35, height: 35, marginRight: "1rem" }}
         fgColor="#fff"
         target="_blank"
       />
       <SocialIcon
-        url="http://instagram.com"
+        url="https://www.instagram.com/vasvrsac/"
         className={styles.link}
         style={{ width: 35, height: 35 }}
         fgColor="#fff"
