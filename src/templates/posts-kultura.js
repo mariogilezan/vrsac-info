@@ -9,11 +9,18 @@ const Posts = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allSanityPost.nodes
   const { basePath } = pageContext
+  let ogImage
+
+  try {
+    ogImage = posts[0].postImage.asset.fluid.src
+  } catch (error) {
+    ogImage = null
+  }
 
   if (posts.length <= 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="Kultura" />
+        <SEO title="Kultura" image={ogImage} />
         <p>No news posts found.</p>
       </Layout>
     )
@@ -21,7 +28,7 @@ const Posts = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Kultura" />
+      <SEO title="Kultura" image={ogImage} />
       <CardList posts={posts} location={location} basePath={basePath} />
       <Pagination context={pageContext} />
     </Layout>
@@ -50,6 +57,9 @@ export const query = graphql`
         postImage {
           asset {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            fluid {
+              src
+            }
           }
         }
       }

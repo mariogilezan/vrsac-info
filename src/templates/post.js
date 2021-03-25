@@ -8,10 +8,18 @@ import SEO from "../components/seo"
 const Post = ({ data, location }) => {
   const post = data.sanityPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const description = post.body[0].children[0].text.slice(0, 70)
+  let ogImage
+
+  try {
+    ogImage = post.postImage.asset.fluid.src
+  } catch (error) {
+    ogImage = null
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.title} description={post.title} />
+      <SEO title={post.title} description={description} image={ogImage} />
       <article className="post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.title}</h1>
@@ -48,9 +56,17 @@ export const query = graphql`
       }
       publishedDate(formatString: "DD. MMM. YYYY, HH:mm")
       _rawBody
+      body {
+        children {
+          text
+        }
+      }
       postImage {
         asset {
           gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          fluid {
+            src
+          }
         }
       }
     }

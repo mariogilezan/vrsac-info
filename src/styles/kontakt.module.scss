@@ -1,0 +1,28 @@
+.kontaktWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  h1 {
+    margin: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  h3 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    &:hover {
+      text-decoration: underline;
+    }
+    span {
+      margin-left: 0.2rem;
+    }
+  }
+  p {
+    border-bottom: 2px solid #70a0a1;
+    padding-bottom: 0.2rem;
+  }
+}

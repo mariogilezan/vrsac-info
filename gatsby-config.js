@@ -2,9 +2,10 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `Vaš Info VŠ`,
+    title: `Vršac Info`,
+    description: `Vršac Info je portal na kojem možete da se informišete o najnovijim vestima iz grada Vršca i okoline.`,
     siteUrl: `https://gatsby-starter-hello-world-demo.netlify.app/`,
-    description: `Vaš Info VŠ je stranica na kojoj možete da se informišete o vestima iz Vršca i okoline.`,
+    image: `/images/kontakt-bg.jpg`,
     menuLinks: [
       {
         name: `Naslovna`,
@@ -60,6 +61,7 @@ module.exports = {
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
+        apiVersion: "2021-03-25",
         token: process.env.SANITY_TOKEN,
         watchMode: process.env.NODE_ENV === "development",
       },

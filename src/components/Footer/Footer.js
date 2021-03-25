@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
         </div>
         <p className={styles.copyright}>
-          Vaš Info VŠ © 2021. Sva prava zadržana.
+          Vršac Info © 2021. Sva prava zadržana.
         </p>
       </div>
     </footer>
