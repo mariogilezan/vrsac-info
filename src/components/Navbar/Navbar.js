@@ -10,7 +10,8 @@ import MobileNavbar from "../MobileNavbar/MobileNavbar"
 const getWidth = () =>
   window.innerWidth ||
   document.decumentElement.clientWidth ||
-  document.body.clientWidth
+  document.body.clientWidth ||
+  null
 
 export default function Navbar() {
   const [width, setWidth] = useState(getWidth())
