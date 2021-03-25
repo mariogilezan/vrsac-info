@@ -7,11 +7,16 @@ import * as styles from "./Navbar.module.scss"
 import SocialIcons from "../SocialIcons/SocialIcons"
 import MobileNavbar from "../MobileNavbar/MobileNavbar"
 
-const getWidth = () =>
-  window.innerWidth ||
-  document.decumentElement.clientWidth ||
-  document.body.clientWidth ||
-  null
+const getWidth = () => {
+  if (typeof window === "undefined" || !window.document) {
+    return
+  }
+  return (
+    window.innerWidth ||
+    document.decumentElement.clientWidth ||
+    document.body.clientWidth
+  )
+}
 
 export default function Navbar() {
   const [width, setWidth] = useState(getWidth())
