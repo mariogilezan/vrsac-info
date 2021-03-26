@@ -35,10 +35,10 @@ export default function Kontakt({ location }) {
           <EmailIcon fontSize="small" />
           <span>vrsacinfoservis@gmail.com</span>
         </a>
-        <p>Vaš Info VŠ</p>
+        <p>Vršac Info</p>
         <StaticImage
           src="../images/kontakt-bg.jpg"
-          alt="Kontakt image background image"
+          alt="Kontakt background image"
           layout="constrained"
           placeholder="blurred"
         />
