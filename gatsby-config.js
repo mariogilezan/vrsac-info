@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Vršac Info`,
     description: `Vršac Info je portal na kojem možete da se informišete o najnovijim vestima iz grada Vršca i okoline.`,
-    siteUrl: `https://gatsby-starter-hello-world-demo.netlify.app/`,
+    siteUrl: `https://vrsac-info.netlify.app/`,
     image: `/images/kontakt-bg.jpg`,
     menuLinks: [
       {
