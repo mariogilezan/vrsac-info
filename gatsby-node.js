@@ -100,7 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     pathPrefix: drustvoPath,
     context: {
       basePath: drustvoPath === `/drustvo` ? "" : drustvoPath,
-      paginationPath: drustvoPath === `/drustvo` ? "" : drustvoPath,
+      paginationPath: drustvoPath === `/drustvo` ? drustvoPath : "",
     },
   })
 
@@ -115,7 +115,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     pathPrefix: kulturaPath,
     context: {
       basePath: kulturaPath === `/kultura` ? "" : kulturaPath,
-      paginationPath: kulturaPath === `/kultura` ? "" : kulturaPath,
+      paginationPath: kulturaPath === `/kultura` ? kulturaPath : "",
     },
   })
 
@@ -130,7 +130,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     pathPrefix: sportPath,
     context: {
       basePath: sportPath === `/sport` ? "" : sportPath,
-      paginationPath: sportPath === `/sport` ? "" : sportPath,
+      paginationPath: sportPath === `/sport` ? sportPath : "",
     },
   })
 }

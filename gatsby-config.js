@@ -61,7 +61,7 @@ module.exports = {
       options: {
         projectId: process.env.SANITY_PROJECT_ID,
         dataset: process.env.SANITY_DATASET,
-        apiVersion: "2021-03-25",
+        apiVersion: "2021-03-28",
         token: process.env.SANITY_TOKEN,
         watchMode: process.env.NODE_ENV === "development",
       },
