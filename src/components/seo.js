@@ -9,6 +9,7 @@ const SEO = ({ description, lang, title, image }) => {
         siteMetadata {
           title
           description
+          keywords
           siteUrl
           image
         }
@@ -18,6 +19,7 @@ const SEO = ({ description, lang, title, image }) => {
 
   const defaultImage = site.siteMetadata.siteUrl + site.siteMetadata.image
   const metaDescription = description || site.siteMetadata.description
+  const keywords = site.siteMetadata.keywords.join(", ") || ""
   const defaultTitle = site.siteMetadata.title
   const metaImage = image || defaultImage
 
@@ -35,6 +37,7 @@ const SEO = ({ description, lang, title, image }) => {
       {/* General tags */}
       <meta name="image" content={image} />
       <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={keywords} />
 
       {/* OpenGraph tags */}
       <meta property="og:title" content={title} />
