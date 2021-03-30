@@ -22,7 +22,6 @@ const SEO = ({ description, lang, title, image }) => {
   const keywords = site.siteMetadata.keywords.join(", ") || ""
   const defaultTitle = site.siteMetadata.title
   const metaImage = image || defaultImage
-  const url = site.siteMetadata.siteUrl
 
   return (
     <Helmet
@@ -39,7 +38,6 @@ const SEO = ({ description, lang, title, image }) => {
       <meta name="image" content={image} />
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={url} />
 
       {/* OpenGraph tags */}
       <meta property="og:title" content={title} />
