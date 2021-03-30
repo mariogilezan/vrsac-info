@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, title, image }) => {
+const SEO = ({ description, lang, title, image, pathname }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -22,6 +22,7 @@ const SEO = ({ description, lang, title, image }) => {
   const keywords = site.siteMetadata.keywords.join(", ") || ""
   const defaultTitle = site.siteMetadata.title
   const metaImage = image || defaultImage
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
     <Helmet
@@ -31,6 +32,7 @@ const SEO = ({ description, lang, title, image }) => {
       title={title}
       defaultTitle={defaultTitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={canonical ? [{ rel: "canonical", href: canonical }] : []}
     >
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />

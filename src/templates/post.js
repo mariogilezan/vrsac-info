@@ -9,6 +9,7 @@ const Post = ({ data, location }) => {
   const post = data.sanityPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const description = post.body[0].children[0].text
+  const { pathname } = location
   let ogImage
 
   try {
@@ -19,7 +20,12 @@ const Post = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.title} description={description} image={ogImage} />
+      <SEO
+        title={post.title}
+        description={description}
+        image={ogImage}
+        pathname={pathname}
+      />
       <article className="post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.title}</h1>

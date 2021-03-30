@@ -17,9 +17,10 @@ export default function Kontakt({ location }) {
     }
   `)
   const siteTitle = data.site.siteMetadata.title || "Kontakt"
+  const { pathname } = location
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Kontakt" />
+      <SEO title="Kontakt" pathname={pathname} />
       <section className={styles.kontaktWrapper}>
         <h1>Kontakt</h1>
         <h3>

@@ -9,6 +9,7 @@ const Posts = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allSanityPost.nodes
   const { basePath } = pageContext
+  const { pathname } = location
   let ogImage
 
   try {
@@ -20,7 +21,7 @@ const Posts = ({ data, location, pageContext }) => {
   if (posts.length <= 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="Društvo" image={ogImage} />
+        <SEO title="Društvo" image={ogImage} pathname={pathname} />
         <p>No news posts found.</p>
       </Layout>
     )
@@ -28,7 +29,7 @@ const Posts = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Društvo" image={ogImage} />
+      <SEO title="Društvo" image={ogImage} pathname={pathname} />
       <CardList posts={posts} location={location} basePath={basePath} />
       <Pagination context={pageContext} />
     </Layout>
