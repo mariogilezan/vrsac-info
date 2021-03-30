@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 const Post = ({ data, location }) => {
   const post = data.sanityPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const description = post.body[0].children[0].text.slice(0, 70)
+  const description = post.body[0].children[0].text
   let ogImage
 
   try {
