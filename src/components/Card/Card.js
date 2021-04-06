@@ -14,12 +14,14 @@ export default function Card({ posts, basePath, isFirst, pageNumber }) {
         i === 0 && firstPost ? { gridColumn: "1 / -1" } : { gridColumn: "" }
       }
     >
-      <div>
-        <GatsbyImage
-          image={post.postImage.asset.gatsbyImageData}
-          alt={post.title}
-        />
-      </div>
+      {post.postImage && (
+        <div>
+          <GatsbyImage
+            image={post.postImage.asset.gatsbyImageData}
+            alt={post.title}
+          />
+        </div>
+      )}
       <article
         className={styles.article}
         itemScope
