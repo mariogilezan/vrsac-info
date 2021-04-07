@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Mario Gilezan <mariogilezan10@gmail.com>",
+  "author": "Mario Gilezan",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
