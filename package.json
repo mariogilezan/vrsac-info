@@ -3,7 +3,7 @@
   "private": true,
   "description": "Vas Info VS je portal na kojem mozete da se informisete o aktuelnim vestima iz Vrsca i okoline",
   "version": "2.0.0",
-  "author": "Mario Gilezan <mariogilezan10@gmail.com>",
+  "author": "Mario Gilezan",
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
