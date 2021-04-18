@@ -80,6 +80,6 @@ module.exports = {
     },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 }
