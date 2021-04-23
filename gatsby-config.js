@@ -16,7 +16,7 @@ module.exports = {
       "vas info vs",
       "vaš info vš",
     ],
-    siteUrl: `https://vrsac-info.netlify.app/`,
+    siteUrl: `https://vrsacinfo.rs/`,
     image: `/images/kontakt-bg.jpg`,
     menuLinks: [
       {
