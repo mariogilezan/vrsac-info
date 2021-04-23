@@ -1,8 +1,8 @@
 {
   "name": "vrsac-info",
   "private": true,
-  "description": "Vas Info VS je portal na kojem mozete da se informisete o aktuelnim vestima iz Vrsca i okoline",
-  "version": "2.0.0",
+  "description": "Vrsac Info je portal na kojem mozete da se informisete o aktuelnim vestima iz Vrsca i okoline",
+  "version": "3.0.0",
   "author": "Mario Gilezan",
   "license": "0BSD",
   "scripts": {
