@@ -4,18 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Vršac Info`,
     description: `Vršac Info je portal na kojem možete da se informišete o najnovijim vestima iz grada Vršca i okoline.`,
-    keywords: [
-      "vrsac info",
-      "vršac info",
-      "vrsacinfo",
-      "vršacinfo",
-      "vrsac",
-      "vršac",
-      "vesti",
-      "portal",
-      "vas info vs",
-      "vaš info vš",
-    ],
+    keywords: ["vrsac info", "vršac info", "vrsac", "vršac", "vesti", "portal"],
     siteUrl: `https://vrsacinfo.rs/`,
     image: `/images/kontakt-bg.jpg`,
     menuLinks: [
