@@ -17,10 +17,11 @@ export default function Kontakt({ location }) {
     }
   `)
   const siteTitle = data.site.siteMetadata.title || "Kontakt"
+  const imageSrc = "../images/kontakt-bg.jpg"
   const { pathname } = location
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Kontakt" pathname={pathname} />
+      <SEO title="Kontakt" pathname={pathname} image={imageSrc} />
       <section className={styles.kontaktWrapper}>
         <h1>Kontakt</h1>
         <h3>
@@ -38,7 +39,7 @@ export default function Kontakt({ location }) {
         </a>
         <p>Vršac Info</p>
         <StaticImage
-          src="../images/kontakt-bg.jpg"
+          src={imageSrc}
           alt="Kontakt background image"
           layout="constrained"
           placeholder="blurred"

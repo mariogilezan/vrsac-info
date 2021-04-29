@@ -4,12 +4,16 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import BlockContent from "@sanity/block-content-to-react"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { Facebook, Twitter } from "@material-ui/icons"
 
 const Post = ({ data, location }) => {
   const post = data.sanityPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const description = post.body[0].children[0].text
   const { pathname } = location
+  const { siteUrl } = useSiteMetadata()
+  const postUrl = `${siteUrl}${pathname}`
   let ogImage
 
   try {
@@ -30,8 +34,28 @@ const Post = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.title}</h1>
           <div className="postDetails">
-            <p className="postCategory">{post.categories[0].title}</p>
-            <p className="postDate">{post.publishedDate}</p>
+            <h3 className="postDetails__title">{post.categories[0].title}</h3>
+            <p className="postDetails__date">{post.publishedDate}</p>
+          </div>
+          <div className="postShare">
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${postUrl}`}
+              className="postShare__facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook />
+              <span>Share</span>
+            </a>
+            <a
+              href={`https://twitter.com/share?url=${postUrl}`}
+              className="postShare__twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter />
+              <span>Tweet</span>
+            </a>
           </div>
         </header>
         <div className="postImage">

@@ -11,17 +11,16 @@ const SEO = ({ description, lang, title, image, pathname }) => {
           description
           keywords
           siteUrl
-          image
         }
       }
     }
   `)
 
-  const defaultImage = site.siteMetadata.siteUrl + site.siteMetadata.image
-  const metaDescription = description || site.siteMetadata.description
-  const keywords = site.siteMetadata.keywords.join(", ") || ""
+  const defaultImage = "../images/kontakt-bg.jpg"
   const defaultTitle = site.siteMetadata.title
+  const metaDescription = description || site.siteMetadata.description
   const metaImage = image || defaultImage
+  const keywords = site.siteMetadata.keywords.join(", ") || ""
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
@@ -37,11 +36,13 @@ const SEO = ({ description, lang, title, image, pathname }) => {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* General tags */}
-      <meta name="image" content={image} />
+      <meta name="image" content={metaImage} />
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={keywords} />
 
       {/* OpenGraph tags */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonical} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={metaImage} />
       <meta property="og:description" content={metaDescription} />
