@@ -8433,6 +8433,11 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
+sanity-plugin-dark-theme-blue@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-dark-theme-blue/-/sanity-plugin-dark-theme-blue-1.0.1.tgz#74804676323b49d05df383ec5c6d72458d3e8679"
+  integrity sha512-5J9HjLCVsiHDqms9aLBY3lDGlajaQ2mp/h/XPwTgmKvg+F8gCjFi1uOyFevRYx/gdy/98Y4hsuj1fmPX9uHNJw==
+
 sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
