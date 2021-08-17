@@ -1,5 +1,5 @@
 import React from "react"
-import Card from "../Card/Card"
+import Card from "../Card"
 import * as styles from "./CardList.module.scss"
 
 export default function CardList({ posts, basePath, isFirst, pageNumber }) {

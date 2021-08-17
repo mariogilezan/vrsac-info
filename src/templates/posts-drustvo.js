@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout/Layout"
-import CardList from "../components/CardList/CardList"
-import SEO from "../components/seo"
-import Pagination from "../components/Pagination/Pagination"
+import Layout from "../components/Layout"
+import CardList from "../components/CardList"
+import Seo from "../components/Seo"
+import Pagination from "../components/Pagination"
 
 const Posts = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -21,7 +21,7 @@ const Posts = ({ data, location, pageContext }) => {
   if (posts.length <= 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="Društvo" image={ogImage} pathname={pathname} />
+        <Seo title="Društvo" image={ogImage} pathname={pathname} />
         <p>No news posts found.</p>
       </Layout>
     )
@@ -29,7 +29,7 @@ const Posts = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Društvo" image={ogImage} pathname={pathname} />
+      <Seo title="Društvo" image={ogImage} pathname={pathname} />
       <CardList posts={posts} location={location} basePath={basePath} />
       <Pagination context={pageContext} />
     </Layout>

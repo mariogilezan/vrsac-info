@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
-import NavLink from "../NavLink/NavLink"
+import NavLink from "../NavLink"
 import logo from "../../images/logo.png"
 import * as styles from "./Navbar.module.scss"
-import SocialIcons from "../SocialIcons/SocialIcons"
-import MobileNavbar from "../MobileNavbar/MobileNavbar"
+import SocialIcons from "../SocialIcons"
+import MobileNavbar from "../MobileNavbar"
 
 const getWidth = () => {
   if (typeof window === "undefined" || !window.document) {

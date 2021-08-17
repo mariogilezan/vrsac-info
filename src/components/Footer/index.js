@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
-import SocialIcons from "../SocialIcons/SocialIcons"
+import SocialIcons from "../SocialIcons"
 import * as styles from "./Footer.module.scss"
 
 export default function Footer() {

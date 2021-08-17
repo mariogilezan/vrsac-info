@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import BlockContent from "@sanity/block-content-to-react"
-import Layout from "../components/Layout/Layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { Facebook, Twitter } from "@material-ui/icons"
 
@@ -24,7 +24,7 @@ const Post = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={post.title}
         description={description}
         image={ogImage}

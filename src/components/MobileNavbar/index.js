@@ -7,8 +7,8 @@ import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import MenuIcon from "@material-ui/icons/Menu"
 import IconButton from "@material-ui/core/IconButton"
-import NavLink from "../NavLink/NavLink"
-import SocialIcons from "../SocialIcons/SocialIcons"
+import NavLink from "../NavLink"
+import SocialIcons from "../SocialIcons"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
 const useStyles = makeStyles({
