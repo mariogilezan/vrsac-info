@@ -28,12 +28,7 @@ export default function Kontakt({ location }) {
           Ukoliko imate neku zanimljivu informaciju i želite da je podelite sa
           nama, možete da nas kontaktirate na:
         </h3>
-        <a
-          href="mailto:vrsacinfoservis@gmail.com
-"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="mailto:vrsacinfoservis@gmail.com">
           <EmailIcon fontSize="small" />
           <span>vrsacinfoservis@gmail.com</span>
         </a>
