@@ -6,6 +6,8 @@ import * as styles from "./Footer.module.scss"
 
 export default function Footer() {
   const { menuLinks } = useSiteMetadata()
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
@@ -24,7 +26,7 @@ export default function Footer() {
           </div>
         </div>
         <p className={styles.copyright}>
-          Vršac Info © 2021. Sva prava zadržana.
+          © {currentYear} Vršac Info. Sva prava zadržana.
         </p>
       </div>
     </footer>
