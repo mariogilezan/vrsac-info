@@ -4,7 +4,7 @@
   "description": "Vrsac Info je portal na kojem mozete da se informisete o aktuelnim vestima iz Vrsca i okoline",
   "version": "3.0.0",
   "author": "Mario Gilezan",
-  "license": "MIT",
+  "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

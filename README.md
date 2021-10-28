@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="./src/images/logo.png" width="70" />
+    <img alt="vrsac info logo" src="./src/images/logo.png" width="70" />
   </a>
 </p>
 <h1 align="center">
@@ -18,9 +18,10 @@ Vršac Info is a news blog website built for local journalist. For the frontend 
 - Material UI
 - Sanity
 - Netlify
+- VS Code
 
 ## 📝 License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+_0BSD_
 
 <!-- AUTO-GENERATED-CONTENT:END -->
