@@ -15,12 +15,14 @@ export default function Card({ posts, basePath, isFirst, pageNumber }) {
       }
     >
       {post.postImage && (
-        <div>
-          <GatsbyImage
-            image={post.postImage.asset.gatsbyImageData}
-            alt={post.title}
-          />
-        </div>
+        <GatsbyImage
+          image={post.postImage.asset.gatsbyImageData}
+          alt={post.title}
+          className={styles.imageWrapper}
+          style={
+            i === 0 && firstPost ? { height: "24rem" } : { height: "16rem" }
+          }
+        />
       )}
       <article
         className={styles.article}
