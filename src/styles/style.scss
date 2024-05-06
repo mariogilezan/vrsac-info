@@ -16,7 +16,7 @@ $color-link: #0863da;
 $color-dark: #020404;
 $color-light: #fefefe;
 $color-facebook: #4267b2;
-$color-twitter: #1da1f2;
+$color-twitter: #000000;
 
 // Global Styles
 *,
@@ -61,15 +61,6 @@ a {
 }
 
 // Post Styles
-.post {
-  a,
-  a:visited {
-    color: $color-link;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
 .postDetails {
   display: flex;
   align-items: baseline;
@@ -94,13 +85,20 @@ a {
   align-items: center;
   &__facebook,
   &__twitter {
-    text-decoration: none !important;
-    color: $color-light !important;
-    padding: 0.1rem;
+    text-decoration: none;
+    color: $color-light;
+    padding: 0.15rem;
     padding-right: 0.3rem;
     border-radius: 0.2rem;
     display: flex;
     align-items: center;
+    transition: transform 0.25s;
+    &:hover {
+      transform: translateY(-2px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
     span {
       font-size: 0.8rem;
       font-weight: bold;
