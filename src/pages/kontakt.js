@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "../styles/kontakt.module.scss"
-import EmailIcon from "@material-ui/icons/Email"
+import EmailIcon from "@mui/icons-material/Email"
 
 export default function Kontakt({ location }) {
   const data = useStaticQuery(graphql`
