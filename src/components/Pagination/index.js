@@ -1,9 +1,9 @@
 import React from "react"
 import { navigate, Link } from "gatsby"
 import * as styles from "./Pagination.module.scss"
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
-import ChevronRightIcon from "@material-ui/icons/ChevronRight"
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"
+import ChevronRightIcon from "@mui/icons-material/ChevronRight"
 
 export default function Pagination({ context }) {
   function changePage(e) {
@@ -32,7 +32,8 @@ export default function Pagination({ context }) {
                 </option>
               ))}
             </select>
-            /{context.numberOfPages} <ArrowDropDownIcon fontSize="small" />
+            /{context.numberOfPages}
+            <ArrowDropDownIcon fontSize="small" />
           </div>
           <div className={styles.buttonsWrapper}>
             {context.previousPagePath && (
