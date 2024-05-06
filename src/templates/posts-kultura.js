@@ -39,7 +39,7 @@ const Posts = ({ data, location, pageContext }) => {
 export const query = graphql`
   query PostsKulturaData($skip: Int, $limit: Int) {
     allSanityPost(
-      sort: { fields: publishedDate, order: DESC }
+      sort: { publishedDate: DESC }
       filter: { categories: { elemMatch: { title: { eq: "Kultura" } } } }
       limit: $limit
       skip: $skip
@@ -58,9 +58,7 @@ export const query = graphql`
         postImage {
           asset {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-            fluid {
-              src
-            }
+            url
           }
         }
       }

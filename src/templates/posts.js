@@ -44,11 +44,7 @@ const Posts = ({ data, location, pageContext }) => {
 
 export const query = graphql`
   query PostsData($skip: Int, $limit: Int) {
-    allSanityPost(
-      sort: { fields: publishedDate, order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+    allSanityPost(sort: { publishedDate: DESC }, limit: $limit, skip: $skip) {
       nodes {
         _id
         title
@@ -63,9 +59,7 @@ export const query = graphql`
         postImage {
           asset {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-            fluid {
-              src
-            }
+            url
           }
         }
       }
