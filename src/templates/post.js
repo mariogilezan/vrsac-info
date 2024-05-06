@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import BlockContent from "@sanity/block-content-to-react"
+import { PortableText } from "@portabletext/react"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { Facebook, Twitter } from "@material-ui/icons"
+import FacebookIcon from "@mui/icons-material/Facebook"
+import XIcon from "@mui/icons-material/X"
 
 const Post = ({ data, location }) => {
   const post = data.sanityPost
@@ -44,7 +45,7 @@ const Post = ({ data, location }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Facebook />
+              <FacebookIcon fontSize="small" />
               <span>Share</span>
             </a>
             <a
@@ -53,7 +54,7 @@ const Post = ({ data, location }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter />
+              <XIcon fontSize="small" />
               <span>Tweet</span>
             </a>
           </div>
@@ -66,7 +67,7 @@ const Post = ({ data, location }) => {
             />
           )}
         </div>
-        <BlockContent blocks={post._rawBody} />
+        <PortableText value={post._rawBody} />
       </article>
     </Layout>
   )
@@ -94,9 +95,7 @@ export const query = graphql`
       postImage {
         asset {
           gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-          fluid {
-            src
-          }
+          url
         }
       }
     }
