@@ -1,17 +1,16 @@
 import React, { useState } from "react"
-import clsx from "clsx"
-import { makeStyles } from "@material-ui/core/styles"
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
-import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
-import ListItem from "@material-ui/core/ListItem"
-import MenuIcon from "@material-ui/icons/Menu"
-import IconButton from "@material-ui/core/IconButton"
+import Box from "@mui/material/Box"
+import SwipeableDrawer from "@mui/material/SwipeableDrawer"
+import List from "@mui/material/List"
+import ListItem from "@mui/material/ListItem"
+import Divider from "@mui/material/Divider"
+import IconButton from "@mui/material/IconButton"
+import MenuIcon from "@mui/icons-material/Menu"
 import NavLink from "../NavLink"
 import SocialIcons from "../SocialIcons"
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
 
-const useStyles = makeStyles({
+const customStyles = {
   list: {
     width: 250,
     height: "100%",
@@ -21,16 +20,16 @@ const useStyles = makeStyles({
     justifyContent: "space-around",
     backgroundColor: "#020404",
   },
-  paper: {
-    background: "#020404",
+  divider: {
+    width: "100%",
+    borderColor: "rgba(255, 255, 255, 0.12)",
   },
-})
+}
 
 export default function MobileNavbar() {
-  const { menuLinks } = useSiteMetadata()
-  const classes = useStyles()
-  const anchorDirection = "right"
   const [isOpen, setIsOpen] = useState(false)
+  const { menuLinks } = useSiteMetadata()
+  const anchorDirection = "right"
 
   const toggleDrawer = open => event => {
     if (
@@ -44,8 +43,8 @@ export default function MobileNavbar() {
   }
 
   const list = () => (
-    <div
-      className={clsx(classes.list)}
+    <Box
+      sx={customStyles.list}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
@@ -57,9 +56,9 @@ export default function MobileNavbar() {
           </ListItem>
         ))}
       </List>
-      <Divider />
+      <Divider sx={customStyles.divider} />
       <SocialIcons />
-    </div>
+    </Box>
   )
 
   return (
@@ -76,7 +75,6 @@ export default function MobileNavbar() {
         open={isOpen}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
-        classes={{ paper: classes.paper }}
       >
         {list()}
       </SwipeableDrawer>
