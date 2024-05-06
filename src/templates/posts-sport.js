@@ -6,10 +6,28 @@ import Seo from "../components/Seo"
 import Pagination from "../components/Pagination"
 
 const Posts = ({ data, location, pageContext }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allSanityPost.nodes
   const { basePath } = pageContext
-  const { pathname } = location
+
+  if (posts.length <= 0) {
+    return (
+      <Layout location={location}>
+        <p>No news posts found.</p>
+      </Layout>
+    )
+  }
+
+  return (
+    <Layout location={location}>
+      <CardList posts={posts} location={location} basePath={basePath} />
+      <Pagination context={pageContext} />
+    </Layout>
+  )
+}
+
+// Seo
+export const Head = ({ data, location }) => {
+  const posts = data.allSanityPost.nodes
   let ogImage
 
   try {
@@ -18,23 +36,10 @@ const Posts = ({ data, location, pageContext }) => {
     ogImage = null
   }
 
-  if (posts.length <= 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="Sport" image={ogImage} pathname={pathname} />
-        <p>No news posts found.</p>
-      </Layout>
-    )
-  }
-
-  return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="Sport" image={ogImage} pathname={pathname} />
-      <CardList posts={posts} location={location} basePath={basePath} />
-      <Pagination context={pageContext} />
-    </Layout>
-  )
+  return <Seo title="Sport" image={ogImage} pathname={location.pathname} />
 }
+
+export default Posts
 
 export const query = graphql`
   query PostsSportData($skip: Int, $limit: Int) {
@@ -70,5 +75,3 @@ export const query = graphql`
     }
   }
 `
-
-export default Posts

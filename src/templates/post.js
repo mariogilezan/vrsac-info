@@ -10,27 +10,12 @@ import XIcon from "@mui/icons-material/X"
 
 const Post = ({ data, location }) => {
   const post = data.sanityPost
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const description = post.body[0].children[0].text
   const { pathname } = location
   const { siteUrl } = useSiteMetadata()
   const postUrl = `${siteUrl}${pathname}`
-  let ogImage
-
-  try {
-    ogImage = post.postImage.asset.fluid.src
-  } catch (error) {
-    ogImage = null
-  }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.title}
-        description={description}
-        image={ogImage}
-        pathname={pathname}
-      />
+    <Layout location={location}>
       <article className="post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.title}</h1>
@@ -73,6 +58,31 @@ const Post = ({ data, location }) => {
   )
 }
 
+// Seo
+export const Head = ({ data, location }) => {
+  const post = data.sanityPost
+  const description = post.body[0].children[0].text
+  const { pathname } = location
+  let ogImage
+
+  try {
+    ogImage = post.postImage.asset.fluid.src
+  } catch (error) {
+    ogImage = null
+  }
+
+  return (
+    <Seo
+      title={post.title}
+      description={description}
+      image={ogImage}
+      pathname={pathname}
+    />
+  )
+}
+
+export default Post
+
 export const query = graphql`
   query PostData($slug: String) {
     site {
@@ -101,5 +111,3 @@ export const query = graphql`
     }
   }
 `
-
-export default Post

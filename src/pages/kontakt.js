@@ -1,27 +1,16 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "../styles/kontakt.module.scss"
 import EmailIcon from "@mui/icons-material/Email"
 
+const imageSrc = "../images/kontakt-bg.jpg"
+
 export default function Kontakt({ location }) {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-  const siteTitle = data.site.siteMetadata.title || "Kontakt"
-  const imageSrc = "../images/kontakt-bg.jpg"
-  const { pathname } = location
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="Kontakt" pathname={pathname} image={imageSrc} />
+    <Layout location={location}>
       <section className={styles.kontaktWrapper}>
         <h1>Kontakt</h1>
         <h3>
@@ -42,4 +31,9 @@ export default function Kontakt({ location }) {
       </section>
     </Layout>
   )
+}
+
+// Seo
+export const Head = ({ location }) => {
+  return <Seo title="Kontakt" pathname={location.pathname} image={imageSrc} />
 }

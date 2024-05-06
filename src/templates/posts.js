@@ -6,30 +6,19 @@ import Seo from "../components/Seo"
 import Pagination from "../components/Pagination"
 
 const Posts = ({ data, location, pageContext }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allSanityPost.nodes
   const { basePath, humanPageNumber } = pageContext
-  const { pathname } = location
-  let ogImage
-
-  try {
-    ogImage = posts[0].postImage.asset.fluid.src
-  } catch (error) {
-    ogImage = null
-  }
 
   if (posts.length <= 0) {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="Naslovna" image={ogImage} pathname={pathname} />
+      <Layout location={location}>
         <p>No news posts found.</p>
       </Layout>
     )
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="Naslovna" image={ogImage} pathname={pathname} />
+    <Layout location={location}>
       <CardList
         posts={posts}
         location={location}
@@ -41,6 +30,22 @@ const Posts = ({ data, location, pageContext }) => {
     </Layout>
   )
 }
+
+// Seo
+export const Head = ({ data, location }) => {
+  const posts = data.allSanityPost.nodes
+  let ogImage
+
+  try {
+    ogImage = posts[0].postImage.asset.fluid.src
+  } catch (error) {
+    ogImage = null
+  }
+
+  return <Seo title="Naslovna" image={ogImage} pathname={location.pathname} />
+}
+
+export default Posts
 
 export const query = graphql`
   query PostsData($skip: Int, $limit: Int) {
@@ -71,5 +76,3 @@ export const query = graphql`
     }
   }
 `
-
-export default Posts
