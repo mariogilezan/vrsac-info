@@ -56,7 +56,6 @@ module.exports = {
         icon: `content/assets/page-icon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-sanity`,
       options: {
