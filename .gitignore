@@ -58,6 +58,11 @@ typings/
 .cache/
 public
 
+# production
+/build
+dist
+/.sanity
+
 # Mac files
 .DS_Store
 
