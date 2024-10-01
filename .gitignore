@@ -62,6 +62,7 @@ public
 /build
 dist
 /.sanity
+.sanity
 
 # Mac files
 .DS_Store
