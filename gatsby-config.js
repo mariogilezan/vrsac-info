@@ -5,7 +5,7 @@ module.exports = {
     title: `Vršac Info`,
     description: `Vršac Info je portal na kojem možete da se informišete o najnovijim vestima iz grada Vršca i okoline.`,
     keywords: ["vrsac info", "vršac info", "vrsac", "vršac", "vesti", "portal"],
-    siteUrl: `https://vrsacinfo.rs/`,
+    siteUrl: `https://vrsacinfo.netlify.app/`,
     image: `/images/kontakt-bg.jpg`,
     menuLinks: [
       {
